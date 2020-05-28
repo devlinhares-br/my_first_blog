@@ -5,7 +5,15 @@
     <title>Porject's Blog</title>
 </head>
 <body>
-    <h1>Hello World!!</h1>
-    <em>Primeiro site com Django</em>
+    <div><h1>Django Blog</h1></div>
+    <div>
+        {% for post in posts%}
+            <div>
+                <p>published: {{ post.published_date}}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
